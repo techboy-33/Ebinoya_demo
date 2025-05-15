@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order System</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <p class="ebinoya-name">えびのや</p>
+        </header>
+
+
+
+        <!-- メニューのカテゴリー-->
+        <div id="menu">
+            <div id="menu-buttons">
+                <button onclick="showSection('tentodon')">天-丼</button>
+                <button onclick="showSection('tanpin')">単品</button>
+                <button onclick="showSection('drink')">ドリンク</button>
+            </div>
+
+            <!-- おすすめ-->
+            <div id="tentodon" class="menu-section">
+                <button class="send-btn" data-message="天">天</button>
+                <button class="send-btn" data-message="味">味</button>
+                <button class="send-btn" data-message="えび">えび</button>
+                <button class="send-btn" data-message="特別天">特別天</button>
+                <button class="send-btn" data-message="1">1</button>
+                <button class="send-btn" data-message="2">2</button>
+                <button class="send-btn" data-message="3">3</button>
+                <button class="send-btn" data-message="特別丼">特別丼</button>
+            </div>
+
+            <!-- 単品-->
+            <div id="tanpin" class="menu-section">
+                <button class="send-btn" data-message="えび">えび</button>
+                <button class="send-btn" data-message="いか">いか</button>
+                <button class="send-btn" data-message="白身魚">白身魚</button>
+                <button class="send-btn" data-message="かぼちゃ">かぼちゃ</button>
+                <button class="send-btn" data-message="穴子">穴子</button>
+                <button class="send-btn" data-message="なす">なす</button>
+                <button class="send-btn" data-message="たまご">たまご</button>
+            </div>
+
+            <!-- ドリンク -->
+            <div id="drink" class="menu-section">
+                <button class="send-btn" data-message="ビール">ビール</button>
+                <button class="send-btn" data-message="ウーロン茶">ウーロン茶</button>
+                <button class="send-btn" data-message="ウーロン茶">ガラス</button>
+            </div>
+        </div>
+
+        <!-- 選んだ注文を表示する -->
+        <div id="selected-items">
+            <ul id="selected-items-list">
+
+            </ul>
+
+            <!-- テーブル-->
+            <div id="table-number-container">
+                <div id="table-number-section">
+                    <label for="table-number">Table:</label>
+                    <input type="number" id="table-number" min="1" placeholder="番号">
+                </div>
+                <!-- キーボード -->
+                <div id="numeric-keypad">
+                    <div class="keypad-row">
+                        <button onclick="enterNumber('1')">1</button>
+                        <button onclick="enterNumber('2')">2</button>
+                        <button onclick="enterNumber('3')">3</button>
+                    </div>
+                    <div class="keypad-row">
+                        <button onclick="enterNumber('4')">4</button>
+                        <button onclick="enterNumber('5')">5</button>
+                        <button onclick="enterNumber('6')">6</button>
+                    </div>
+                    <div class="keypad-row">
+                        <button onclick="enterNumber('7')">7</button>
+                        <button onclick="enterNumber('8')">8</button>
+                        <button onclick="enterNumber('9')">9</button>
+                    </div>
+                    <div class="keypad-row">
+                        <button class="delete-btn" onclick="clearNumber()">消</button>
+                        <button onclick="enterNumber('0')">0</button>
+                        <button class="order-btn" onclick="sendOrder()">注文</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 厨房の画面 -->
+        <div id="orders">
+
+        </div>
+
+    </div>
+    <script src="/webchat/chat/static/js/js.js"></script>
+</body>
+
+</html>
